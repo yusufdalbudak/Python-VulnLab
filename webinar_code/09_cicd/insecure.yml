@@ -1,0 +1,19 @@
+# .github/workflows/deploy.yml
+name: Deploy API
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      # VULNERABLE: Hardcoded secrets in YAML
+      - name: Deploy to Prod
+        run: |
+          export DB_PASSWORD="SuperSecretPassword123"
+          python deploy.py
+          
+      # VULNERABLE: No dependency scanning or SAST
+      - name: Install Dependencies
+        run: pip install -r requirements.txt

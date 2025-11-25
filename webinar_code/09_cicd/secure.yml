@@ -1,0 +1,29 @@
+# .github/workflows/deploy.yml
+name: Secure Deploy API
+on: [push]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # FIX: SAST Scan (e.g., Bandit for Python)
+      - name: Run Bandit
+        run: pip install bandit && bandit -r . -f json -o bandit-report.json
+        
+      # FIX: SCA Scan (Dependency Check)
+      - name: Check Dependencies
+        run: pip install safety && safety check
+
+  deploy:
+    needs: security-scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # FIX: Use Secrets Management (GitHub Secrets / Vault)
+      - name: Deploy to Prod
+        env:
+          DB_PASSWORD: ${{ secrets.PROD_DB_PASSWORD }}
+        run: python deploy.py
