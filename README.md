@@ -98,13 +98,6 @@ uvicorn 01_broken_auth.insecure:app --reload
 
 Bu proje yalnızca **eğitim**, **farkındalık** ve **demo** amaçlıdır. Gerçek sistemlerde, kurum içi ortamlarda veya izinsiz platformlarda test edilmesi **kesinlikle yasaktır**.
 
----
-
-## 📌 Yol Haritası
-
-* CI/CD pipeline güvenliği modülleri eklenecek
-* LLM Security & Codegen Risks genişletilecek
-* Shadow API Discovery aracı eklenecek
 
 ---
 
