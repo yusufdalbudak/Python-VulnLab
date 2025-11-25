@@ -2,6 +2,8 @@
 
 Python VulnLab, modern web uygulamalarında karşılaşılan güvenlik açıklarını eğitim amaçlı olarak göstermek üzere hazırlanmış kapsamlı bir zafiyet laboratuvarıdır. Proje; FastAPI, Flask ve Django tabanlı örneklerle kırılgan (insecure) ve güvenli (secure) kod karşılaştırmaları üzerinden hem geliştiricilere hem de güvenlik ekiplerine gerçek saldırı yüzeyini anlamaları için pratik bir ortam sunar.
 
+<img width="1895" height="937" alt="Screenshot 2025-11-25 at 18 59 14" src="https://github.com/user-attachments/assets/74fa2e1d-671b-4f4d-bd65-92283be8c869" />
+
 ---
 
 ## 🎯 Amaç
